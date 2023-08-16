@@ -6,6 +6,7 @@ package vista;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -63,6 +64,7 @@ public class frm_calculadora extends javax.swing.JFrame {
         itm_ayuda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora");
 
         pnl_principal.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -306,9 +308,19 @@ public class frm_calculadora extends javax.swing.JFrame {
         mn_opciones.setText("Opciones");
 
         itm_nuevo.setText("Nuevo");
+        itm_nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itm_nuevoActionPerformed(evt);
+            }
+        });
         mn_opciones.add(itm_nuevo);
 
         itm_historial.setText("Historial");
+        itm_historial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itm_historialActionPerformed(evt);
+            }
+        });
         mn_opciones.add(itm_historial);
 
         jMenuBar1.add(mn_opciones);
@@ -391,6 +403,19 @@ public class frm_calculadora extends javax.swing.JFrame {
         }
     }
     
+    private void agregarNuevoAlHistorial(){
+        try {
+            File archivo = new File("historial.txt");
+            FileWriter escritor = new FileWriter(archivo, true);
+            
+            escritor.write("Nuevo\n");
+            
+            escritor.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    
     private void btn_unoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_unoActionPerformed
         // TODO add your handling code here:
         this.lbl_casilla.setText(this.lbl_casilla.getText()+"1");
@@ -468,6 +493,18 @@ public class frm_calculadora extends javax.swing.JFrame {
         this.lbl_operador.setText("/");
         this.lbl_casilla.setText("");
     }//GEN-LAST:event_btn_dividirActionPerformed
+
+    private void itm_historialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itm_historialActionPerformed
+        // TODO add your handling code here:
+        frm_historial frm = new frm_historial();
+        frm.setVisible(true);
+    }//GEN-LAST:event_itm_historialActionPerformed
+
+    private void itm_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itm_nuevoActionPerformed
+        // TODO add your handling code here:
+        agregarNuevoAlHistorial();
+        lbl_casilla.setText("");
+    }//GEN-LAST:event_itm_nuevoActionPerformed
 
     public String sincero(float resultado){
         String retorno = "";
