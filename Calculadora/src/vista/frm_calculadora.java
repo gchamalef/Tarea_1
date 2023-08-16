@@ -4,6 +4,10 @@
  */
 package vista;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  *
  * @author pc01
@@ -370,10 +374,23 @@ public class frm_calculadora extends javax.swing.JFrame {
             }
             break;
         }
-        
+        String resultado = this.lbl_casilla.getText();
         this.lbl_operador.setText(this.lbl_operador.getText() + "=");
+        guardarHistorial(this.num1 + " " + this.operador + " " + this.num2 + " = " + resultado);
+        
     }//GEN-LAST:event_btn_igualActionPerformed
 
+    private void guardarHistorial(String operacion){
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter("historial.txt", true));
+            writer.append(operacion);
+            writer.newLine();
+            writer.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    
     private void btn_unoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_unoActionPerformed
         // TODO add your handling code here:
         this.lbl_casilla.setText(this.lbl_casilla.getText()+"1");

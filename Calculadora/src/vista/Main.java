@@ -15,6 +15,8 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        frm_calculadora frm = new frm_calculadora();
+            frm.show();
     }
     
 }
