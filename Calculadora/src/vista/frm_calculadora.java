@@ -328,6 +328,11 @@ public class frm_calculadora extends javax.swing.JFrame {
         mn_ayuda.setText("Ayuda");
 
         itm_ayuda.setText("Ayuda");
+        itm_ayuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itm_ayudaActionPerformed(evt);
+            }
+        });
         mn_ayuda.add(itm_ayuda);
 
         jMenuBar1.add(mn_ayuda);
@@ -505,6 +510,12 @@ public class frm_calculadora extends javax.swing.JFrame {
         agregarNuevoAlHistorial();
         lbl_casilla.setText("");
     }//GEN-LAST:event_itm_nuevoActionPerformed
+
+    private void itm_ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itm_ayudaActionPerformed
+        // TODO add your handling code here:
+        frm_ayuda frm = new frm_ayuda();
+        frm.setVisible(true);
+    }//GEN-LAST:event_itm_ayudaActionPerformed
 
     public String sincero(float resultado){
         String retorno = "";

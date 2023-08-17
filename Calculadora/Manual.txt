@@ -1,0 +1,45 @@
+	_________________________________
+	|Manual de Usuario - Calculadora|
+	=================================
+
+Bienvenido al manual de la calculadora. Aquí encontrarás información sobre cómo utilizar las funciones
+básicas de la calculadora.
+
+| Operaciones Básicas:
+----------------------
+	-> Suma: Ingresa dos numeros y haz clic en el boton "+". El resultado se mostrara en la
+	   casilla.
+
+	-> Resta: Ingresa dos numeros y haz clic en el boton "-". El resultado se mostrara en la
+	   casilla.
+
+	-> Multiplicacion: Ingresa dos numero y haz clic en el boton "*". El resultado se mostrara en
+	   la casilla.
+
+	-> Division: Ingresa dos numero y haz clic en el boton "/". El resultado se mostrara en la
+	   casilla.
+
+| Funciones Adicionales:
+------------------------
+	-> Punto Decimal: Para ingresar numeros decimales, haz clic en el boton "." una vez.
+
+	-> Borrar: Para borrar el contenido de la casilla, haz clic en el boton "C".
+
+	-> Igual: Despues de ingresar la operacion, haz clic en el boton "=" para calcular el resultado.
+
+| Nuevo |
+---------
+	-> La opcion "Nuevo" en el menu "Opciones" agrega la palabra 'Nuevo' en una linea, para hacer
+	   una separacion entre las operaciones, tambien borra la casilla.
+
+| Historial |
+-------------
+	-> La opcion "Historial" en el menu "Opciones" te muestra las operaciones previas realizadas.
+
+| Ayuda |
+---------
+	-> La opcion "Ayuda en el menu "Ayuda" te mostrara este manual.
+_________________________________________________________________________________________________________
+
+Espero que este manual te haya sido de ayuda. Cualquier duda puedes escribir al correo:
+	-> gchamalef@miumg.edu.gt

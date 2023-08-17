@@ -13,14 +13,14 @@ import java.io.IOException;
  *
  * @author pc01
  */
-public class frm_historial extends javax.swing.JFrame {
+public class frm_ayuda extends javax.swing.JFrame {
 
     /**
-     * Creates new form frm_historial
+     * Creates new form frm_ayuda
      */
-    public frm_historial() {
+    public frm_ayuda() {
         initComponents();
-        cargarHistorial();
+        cargarManual();
     }
 
     /**
@@ -37,8 +37,7 @@ public class frm_historial extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Historial");
-        setLocation(new java.awt.Point(0, 0));
+        setTitle("Manual de Usuario");
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -50,11 +49,11 @@ public class frm_historial extends javax.swing.JFrame {
         pnl_principal.setLayout(pnl_principalLayout);
         pnl_principalLayout.setHorizontalGroup(
             pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
         );
         pnl_principalLayout.setVerticalGroup(
             pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -71,12 +70,13 @@ public class frm_historial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cargarHistorial(){
+    private void cargarManual(){
         try {
-            File archivo = new File("historial.txt");
-            BufferedReader lector = new BufferedReader(new FileReader(archivo));
-            String linea;
+            File archivoManual = new File("Manual.txt");
+            
+            BufferedReader lector = new BufferedReader(new FileReader(archivoManual));
             StringBuilder contenido = new StringBuilder();
+            String linea;
             
             while((linea = lector.readLine()) != null){
                 contenido.append(linea).append("\n");
@@ -84,8 +84,9 @@ public class frm_historial extends javax.swing.JFrame {
             
             lector.close();
             jTextArea1.setText(contenido.toString());
-        } catch (IOException e){
+        } catch(IOException e){
             e.printStackTrace();
+            jTextArea1.setText("Error al cargar el manual.");
         }
     }
     
@@ -106,20 +107,20 @@ public class frm_historial extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frm_historial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_ayuda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frm_historial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_ayuda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frm_historial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_ayuda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frm_historial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_ayuda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frm_historial().setVisible(true);
+                new frm_ayuda().setVisible(true);
             }
         });
     }
